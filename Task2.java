@@ -9,7 +9,7 @@ public class Task2 {
         String taskFileName = "HomeWork.txt";
         String resultFileName = "Result.txt";
         String text = "Добрый день      Как дела    Все хорошо";
-        
+
         CreateFile(taskFileName);
         WriteMessageToFile(taskFileName, text);
         String textFromFile = ReadFromFile(taskFileName);
@@ -31,8 +31,8 @@ public class Task2 {
     static void WriteMessageToFile(String fileName, String message) { 
         try {
             File file = new File(fileName);
-            FileWriter fw = new FileWriter(file);
-            fw.write(message);
+            FileWriter fw = new FileWriter(file, true);
+            fw.write(message + "\n");
             fw.close();
         } catch (IOException e) {
             System.out.println("Error: " + e);
